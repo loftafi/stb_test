@@ -125,8 +125,6 @@ RECENT REVISION HISTORY:
   80% of merge conflicts on stb PRs are due to people adding their name at the end
   of the credits.
 */
-   #define STB_IMAGE_IMPLEMENTATION
-
 
 #ifndef STBI_INCLUDE_STB_IMAGE_H
 #define STBI_INCLUDE_STB_IMAGE_H
@@ -394,11 +392,11 @@ extern "C" {
 #endif
 
 #ifndef STBIDEF
-#ifdef STB_IMAGE_STATIC
-#define STBIDEF static
-#else
-#define STBIDEF extern
-#endif
+#  ifdef STB_IMAGE_STATIC
+#    define STBIDEF static
+#  else
+#    define STBIDEF extern
+#  endif
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

@@ -12,8 +12,11 @@ pub fn main() !void {
 }
 
 const std = @import("std");
-const stb = @import("stb");
+//const stb = @import("stb");
 
+const stb = @cImport({
+    @cInclude("stb_image.h");
+});
 pub const std_options: std.Options = .{
     .log_level = .debug,
 };
